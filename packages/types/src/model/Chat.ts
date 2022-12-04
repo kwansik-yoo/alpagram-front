@@ -5,6 +5,8 @@ export interface Chat {
     regTime: number;
     modTime: number;
     writer: User;
+    message: string;
+    roomId: string;
 }
 
 export interface Room {
