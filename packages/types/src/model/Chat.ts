@@ -11,7 +11,7 @@ export interface Chat {
 
 export interface Room {
     id: string;
-    sequence: number;
+    offset: number;
 }
 
 export interface DirectChatRoom extends Room {
@@ -23,4 +23,11 @@ export interface GroupChatRoom extends Room {
     owner: User;
     admins: User[];
     members: User[];
+}
+
+export interface ReadOffset {
+    id: string;
+    userId: string;
+    roomId: string;
+    offset: number;
 }

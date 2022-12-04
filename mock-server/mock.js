@@ -68,7 +68,7 @@ const genGroupChatRoom = (userMap) => {
     })
     return [{
         id: roomId,
-        sequence: chats.length,
+        sequence: chats.length-1,
         owner, admins, members
     }, chats];
 }
@@ -82,7 +82,8 @@ const main = () => {
         users: Array.from(userMap.values()),
         dcRooms: dcRooms,
         gcRooms: [gcRoom],
-        chats: [...gChats, ...dChats]
+        chats: [...gChats, ...dChats],
+        readOffsets: []
     }
 
     console.log(JSON.stringify(db, null, 4));
